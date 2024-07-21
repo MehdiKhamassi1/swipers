@@ -7,6 +7,7 @@ import { SwiperComponent } from './swiper/swiper.component';
 
 import { register } from 'swiper/element/bundle';
 import { FlipsliderComponent } from './flipslider/flipslider.component';
+import { AtropossliderComponent } from './atroposslider/atroposslider.component';
 
 register();
 
@@ -14,7 +15,8 @@ register();
   declarations: [
     AppComponent,
     SwiperComponent,
-    FlipsliderComponent
+    FlipsliderComponent,
+    AtropossliderComponent
   ],
   imports: [
     BrowserModule,
