@@ -42,7 +42,7 @@ export class AtropossliderComponent implements OnInit{
       });
     }
     this.sw = new Swiper(".mySwiper", {
-      spaceBetween: 1250,
+      spaceBetween: 750,
       grabCursor: true,
       centeredSlides: true,
       freeMode: true,      
@@ -52,7 +52,7 @@ export class AtropossliderComponent implements OnInit{
       },
       
     });
-      setInterval(()=> this.ff(),5750); 
+      setInterval(()=> this.ff(),7500); 
     
     
   }
@@ -63,10 +63,10 @@ export class AtropossliderComponent implements OnInit{
   }
   ff(){
       if(this.activesign==="m"){     
-        this.sw.slideTo(this.sw.activeIndex-1,6000);
+        this.sw.slideTo(this.sw.activeIndex-1,10000);
       }
       else if(this.activesign==="p"){
-        this.sw.slideTo(this.sw.activeIndex+1,6000);
+        this.sw.slideTo(this.sw.activeIndex+1,10000);
       }   
       if(this.sw.activeIndex==this.images.length-1){
           this.activesign="m";     

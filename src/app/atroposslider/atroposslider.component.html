@@ -1,63 +1,17 @@
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-      <div #atroposElement class="atropos my-atropos0" >
+      <div class="swiper-slide" *ngFor="let image of images">
+    <div #atroposElement class="atropos my-atropos0" >
       <div class="atropos-scale">
         <div class="atropos-rotate">
           <div class="atropos-inner">
-            <img [src]="images[0]" alt="Atropos">      
+            <img [src]="image" alt="Atropos">      
         </div>
         </div>
         </div>   
-        </div>
+      </div>
         </div>
 
-        <div class="swiper-slide">
-          <div #atroposElement class="atropos my-atropos1" >
-          <div class="atropos-scale">
-            <div class="atropos-rotate">
-              <div class="atropos-inner">
-                <img [src]="images[1]" alt="Atropos">      
-            </div>
-            </div>
-            </div>   
-            </div>
-            </div>
-            <div class="swiper-slide">
-              <div #atroposElement class="atropos my-atropos2" >
-              <div class="atropos-scale">
-                <div class="atropos-rotate">
-                  <div class="atropos-inner">
-                    <img [src]="images[2]" alt="Atropos">      
-                </div>
-                </div>
-                </div>   
-                </div>
-            </div>
-      
-            <div class="swiper-slide">
-                  <div #atroposElement class="atropos my-atropos3" >
-                  <div class="atropos-scale">
-                    <div class="atropos-rotate">
-                      <div class="atropos-inner">
-                        <img [src]="images[3]" alt="Atropos">      
-                    </div>
-                    </div>
-                    </div>   
-                    </div>
-            </div>
-
-            <div class="swiper-slide">
-                      <div #atroposElement class="atropos my-atropos4" >
-                      <div class="atropos-scale">
-                        <div class="atropos-rotate">
-                          <div class="atropos-inner">
-                            <img [src]="images[4]" alt="Atropos">      
-                        </div>
-                        </div>
-                        </div>   
-                        </div>
-            </div>
 
       </div>
      

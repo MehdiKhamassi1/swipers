@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule , NO_ERRORS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,11 @@ import { SwiperComponent } from './swiper/swiper.component';
 import { register } from 'swiper/element/bundle';
 import { FlipsliderComponent } from './flipslider/flipslider.component';
 import { AtropossliderComponent } from './atroposslider/atroposslider.component';
+import { FadesliderComponent } from './fadeslider/fadeslider.component';
+import { CubesliderComponent } from './cubeslider/cubeslider.component';
+import { CoverflowsliderComponent } from './coverflowslider/coverflowslider.component';
+import { CardssliderComponent } from './cardsslider/cardsslider.component';
+import { CommonModule } from '@angular/common';
 
 register();
 
@@ -16,13 +21,19 @@ register();
     AppComponent,
     SwiperComponent,
     FlipsliderComponent,
-    AtropossliderComponent
+    AtropossliderComponent,
+    FadesliderComponent,
+    CubesliderComponent,
+    CoverflowsliderComponent,
+    CardssliderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA,NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
