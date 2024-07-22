@@ -7,7 +7,8 @@ import Swiper from 'swiper';
   templateUrl: './atroposslider.component.html',
   styleUrls: ['./atroposslider.component.css']
 })
-export class AtropossliderComponent implements OnInit{
+export class AtropossliderComponent implements OnInit,AfterViewInit{
+  
   
   atroposInstances:any=[];
   images:string[]=[
@@ -17,22 +18,13 @@ export class AtropossliderComponent implements OnInit{
     "https://swiperjs.com/demos/images/nature-4.jpg",
     "https://swiperjs.com/demos/images/nature-5.jpg"
   ];
+  range: number[] = Array.from({ length: this.images.length }, (_, i) => i);
   inn:number=0;
   listt:HTMLCollection[]=[];
   activeslide:number=0;
   activesign="p";
-  sw = new Swiper(".mySwiper", {
-    spaceBetween: 1250,
-    grabCursor: true,
-    centeredSlides: true,
-    freeMode: true,      
-    loop:true,
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    
-  });
-  ngOnInit(): void {
+  sw!:Swiper;
+  ngAfterViewInit(): void {
     for (let i = 0; i < this.images.length; i++) {
       this.atroposInstances[i] = Atropos({
         el: `.my-atropos${i}`,
@@ -53,12 +45,11 @@ export class AtropossliderComponent implements OnInit{
       
     });
       setInterval(()=> this.ff(),7500); 
-    
-    
+  }
+  ngOnInit(): void {
   }
 
   getClass(index: number): string {   
-    console.log("atropos my-atropos"+index);
     return "atropos my-atropos"+index;
   }
   ff(){
