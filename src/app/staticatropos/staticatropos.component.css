@@ -1,0 +1,44 @@
+@import "../../../node_modules/atropos/atropos.css";
+.atropos {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin-left: 300px;
+  }
+  
+  .atropos-scale {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .atropos-rotate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .atropos-inner {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+.my-atropos {
+    
+
+}
+    
+.cont{
+  
+  padding: 50px;
+  
+}
+.imgg{
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}

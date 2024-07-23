@@ -1,7 +1,7 @@
 import { AfterViewInit, Component,OnInit } from '@angular/core';
 import Atropos from 'atropos';
 import Swiper from 'swiper';
-
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 @Component({
   selector: 'app-atroposslider',
   templateUrl: './atroposslider.component.html',
@@ -9,6 +9,13 @@ import Swiper from 'swiper';
 })
 export class AtropossliderComponent implements OnInit,AfterViewInit{
   
+  constructor(private breakpointObserver: BreakpointObserver) { }
+  CUSTOM_BREAKPOINTS = {
+    small: '(max-width: 600px)',
+    medium: '(min-width: 601px) and (max-width: 959px)',
+    large: '(min-width: 960px) and (max-width: 1279px)',
+    xLarge: '(min-width: 1280px)'
+  };
   
   atroposInstances:any=[];
   images:string[]=[
@@ -18,6 +25,7 @@ export class AtropossliderComponent implements OnInit,AfterViewInit{
     "https://swiperjs.com/demos/images/nature-4.jpg",
     "https://swiperjs.com/demos/images/nature-5.jpg"
   ];
+  spacing=150;
   range: number[] = Array.from({ length: this.images.length }, (_, i) => i);
   inn:number=0;
   listt:HTMLCollection[]=[];
@@ -34,11 +42,10 @@ export class AtropossliderComponent implements OnInit,AfterViewInit{
       });
     }
     this.sw = new Swiper(".mySwiper", {
-      spaceBetween: 750,
+      spaceBetween: 150,
       grabCursor: true,
-      centeredSlides: true,
+      centeredSlides: false,
       freeMode: true,      
-      loop:true,
       pagination: {
         el: ".swiper-pagination",
       },
@@ -47,6 +54,31 @@ export class AtropossliderComponent implements OnInit,AfterViewInit{
       setInterval(()=> this.ff(),7500); 
   }
   ngOnInit(): void {
+    this.breakpointObserver.observe([
+      this.CUSTOM_BREAKPOINTS.small,
+      this.CUSTOM_BREAKPOINTS.medium,
+      this.CUSTOM_BREAKPOINTS.large,
+      this.CUSTOM_BREAKPOINTS.xLarge
+    ]).subscribe((state: BreakpointState) => {
+      if (state.breakpoints[this.CUSTOM_BREAKPOINTS.small]) {
+        this.spacing=150;       
+        console.log("s");
+      }
+      if (state.breakpoints[this.CUSTOM_BREAKPOINTS.medium]) {
+        this.spacing=150;
+        console.log("m");
+      }
+      if (state.breakpoints[this.CUSTOM_BREAKPOINTS.large]) {
+        this.spacing=150;
+        console.log("l");
+      }
+      if (state.breakpoints[this.CUSTOM_BREAKPOINTS.xLarge]) {
+        this.spacing=150;
+        console.log("xl");
+      }
+    });
+  
+
   }
 
   getClass(index: number): string {   
