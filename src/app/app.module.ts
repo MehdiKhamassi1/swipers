@@ -14,6 +14,7 @@ import { CoverflowsliderComponent } from './coverflowslider/coverflowslider.comp
 import { CardssliderComponent } from './cardsslider/cardsslider.component';
 import { CommonModule } from '@angular/common';
 import { StaticatroposComponent } from './staticatropos/staticatropos.component';
+import { SliderrComponent } from './sliderr/sliderr.component';
 
 register();
 
@@ -27,7 +28,8 @@ register();
     CubesliderComponent,
     CoverflowsliderComponent,
     CardssliderComponent,
-    StaticatroposComponent
+    StaticatroposComponent,
+    SliderrComponent
   ],
   imports: [
     BrowserModule,
